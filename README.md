@@ -17,21 +17,31 @@ Each node maintains its own verified blockchain ledger (`chain-Node-X.json`) and
 ---
 
 ## 📂 Project Structure
-
+```bash
 ai-usb-blockchain/
 │
-├── blockchain/
-│ ├── block.js
-│ ├── blockchain.js
-│ ├── utils.js
+├── 📄 server.js                    
+├── 📄 package.json                 
+├── 📄 .env.node1                    # Environment for Node-1
+├── 📄 README.md                     # Full project documentation
 │
-├── .env.node1
-├── .env.node2
-├── server.js
-└── package.json
+├── 📂 blockchain/                   # Core blockchain logic
+│   │
+│   ├── 📄 block.js                  # Defines Block class (hashing, signing, validation)
+│   ├── 📄 blockchain.js             # Blockchain class (add, validate, sync, save, load)
+│   ├── 📄 utils.js                  # Utility functions (RSA key loading, signing helpers)
+│   ├── 📄 keygen.js                 # RSA key pair generator script (private/public keys)
+│   │
+│   └── 📂 keys/                     # Stores generated RSA keys
+│       ├── 📄 private.pem           # Private key (used to sign blocks)
+│       └── 📄 public.pem            # Public key (used to verify signatures)
+│
+│
+├── 📄 chain-Node-1.json             # Local blockchain ledger for Node-1
+├── 📄 chain-Node-2.json             # Local blockchain ledger for Node-2
+├── 📄 chain-Node-3.json             # Local blockchain ledger for Node-3
 
-yaml
-Copy code
+```
 
 ---
 
